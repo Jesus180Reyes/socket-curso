@@ -20,10 +20,18 @@
         <span id="lblOffline" class="text-danger">Offline</span>
     </p>
     <div class="col">
-        <input type="text" id="txtmensaje" class="form-control">
+       
     </div>
+   
     <div class="col">
-        <button class="btn btn-primary" id="btnEnviar">Enviar </button>
+        <form  aria-required="true">
+            <input required type="text" id="txtmensaje" class="form-control">
+            <br>
+            <input type="text"  id="txtNombre" required class="form-control" placeholder="Ingresa tu nombre ">
+          
+        <button class="btn btn-primary" id="btnEnviar" type="submit">Enviar </button>
+
+        </form>
 
     </div>
     <script src="./socket.io/socket.io.js"></script>

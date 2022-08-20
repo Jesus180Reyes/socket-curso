@@ -3,6 +3,7 @@ const lblOnline = document.querySelector('#lblOnline');
 const lblOffline = document.querySelector('#lblOffline');
 const txtmensaje = document.querySelector('#txtmensaje');
 const btnEnviar = document.querySelector('#btnEnviar');
+const txtNombre = document.querySelector('#txtNombre');
 
 socket.on('connect', () => {
     console.log("Conectado al servidor");
@@ -24,7 +25,7 @@ btnEnviar.addEventListener('click', () => {
     payload = {
         mensaje: txtmensaje.value,
         id: socket.id,
-        nombre: 'Jesus',
+        nombre: txtNombre.value,
         fecha: new Date().getTime()
 
 
