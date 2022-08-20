@@ -13,7 +13,7 @@ class TicketControl {
         this.ultimo = 0;
         this.hoy = new Date().getDate();
         this.tickets = [];
-        this.ultimo4 = 0;
+        this.ultimo4 = [];
         this.init();
 
 
@@ -24,16 +24,16 @@ class TicketControl {
             ultimo: this.ultimo,
             hoy: this.hoy,
             tickets: this.tickets,
-            ultimos54: this.ultimos54,
+            ultimo4: this.ultimo4,
         }
     }
 
     init() {
-        const { hoy, tickets, ultimo, ultimos54 } = require('../db/data.json');
+        const { hoy, tickets, ultimo, ultimo4 } = require('../db/data.json');
         if (hoy === this.hoy) {
             this.tickets = tickets;
             this.ultimo = ultimo;
-            this.ultimos54 = ultimos54;
+            this.ultimo4 = ultimo4;
 
         } else {
             this.guardarDb();
