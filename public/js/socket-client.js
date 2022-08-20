@@ -20,8 +20,13 @@ socket.on('disconnect', () => {
     lblOffline.style.display = '';
     lblOnline.style.display = 'none';
 });
+document.getElementById("formularioR").addEventListener("click", function(event){
+    txtmensaje.value = "";
+      event.preventDefault();
+  });
 
 btnEnviar.addEventListener('click', () => {
+    txtmensaje.value = "";
     payload = {
         mensaje: txtmensaje.value,
         id: socket.id,
