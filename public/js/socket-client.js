@@ -20,13 +20,14 @@ socket.on('disconnect', () => {
     lblOffline.style.display = '';
     lblOnline.style.display = 'none';
 });
-document.getElementById("formularioR").addEventListener("click", function(event){
-    txtmensaje.value = "";
+document.getElementById("formularioR").addEventListener("click", (event)=>{
+    
       event.preventDefault();
+  
   });
 
 btnEnviar.addEventListener('click', () => {
-    txtmensaje.value = "";
+   
     payload = {
         mensaje: txtmensaje.value,
         id: socket.id,
@@ -36,8 +37,10 @@ btnEnviar.addEventListener('click', () => {
 
     }
     const mensaje = txtmensaje.value;
+   
     socket.emit('enviar-mensaje', payload, (id) => {
         console.log('Mensaje Enviado!!', id);
     });
+    txtmensaje.value = "";
 
 });
