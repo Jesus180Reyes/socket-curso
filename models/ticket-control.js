@@ -44,7 +44,7 @@ class TicketControl {
         fs.writeFileSync(dbPath, JSON.stringify(this.toJson));
     }
     siguiente() {
-        this.ultimo += 1;
+        this.ultimo +=1;
         const ticket = new Ticket(this.ultimo, null);
         this.tickets.push(ticket);
         this.guardarDb();

@@ -31,7 +31,9 @@ socket.on('disconnect', () => {
     btnAtender.disabled = true;
 });
 socket.on('tickets-pendientes', (payload) => {
+    divAlerta.style.display = 'none';
     lblPendientes.innerText = payload;
+   
 });
 socket.on('ultimo-ticket', (ultimo) => {
     // lblNuevoTicket.innerText = 'Ticket N° ' + ultimo;
@@ -50,6 +52,7 @@ btnAtender.addEventListener('click', () => {
             lblTicket.innerText = 'Nadie';
             return divAlerta.style.display = 'inline';
         }
+        divAlerta.style.display = 'none';
         lblTicket.innerText = 'Ticket ' + ticket.numero;
     });
 
